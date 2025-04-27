@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="educationPU">
+        <class>lk.exon.models.Subject</class>  <!-- Ensure this is added -->
+        <class>lk.exon.models.Stream</class>  <!-- Ensure this is added -->
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/education_db?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;zeroDateTimeBehavior=convertToNull"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="1234"/>
+
+            <!-- EclipseLink specific properties -->
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.weaving" value="false"/>
+
+            <!-- Hibernate properties (if switching to Hibernate in the future) -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
